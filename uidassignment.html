@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Online Banking - Home</title>
+    <style>/* styles.css */
+
+        /* Your existing styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        nav {
+            background-color: #333;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding:20px;
+            margin:0px;
+            
+        }
+        
+        nav li {
+            display: inline;
+            margin: 20px;
+
+        
+             
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        .login-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #277db0;
+        }
+        
+        
+        .banking-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .personal-banking,
+        .corporate-banking {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #524b4b;
+            border-radius: 5px;
+            text-align: center;
+            margin:30px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #277db0;
+        }
+        /* styles.css */
+
+/* Your existing styles go here */
+
+.disclaimer {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    left: -100%;
+    animation: moveDisclaimer 20s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes moveDisclaimer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+nav p.a{
+    color: red;
+    background-color:white;
+}
+ #id{
+    display:inline-block;
+    width:20px;
+ }
+ .search-container {
+    display:flex;
+    align-items: center;
+    display:inline-block;
+
+}
+
+.search-box {
+    width: 200px; /* Adjust the width as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.search-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+        </style>
+</head>
+<body>
+    <header>
+        <img align="left" src="C:\Users\SSS\Desktop\assignment\uidass1\sbi.png" >
+        <h1 style="display:inline-block;">Welcome to Online Banking</h1>
+        <img align="right" src="C:\Users\SSS\Desktop\assignment\uidass1\yono.png" style="height:50px;">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="uidassignment.html">HOME</a></li>
+            <li><a href="dum1.html" target="_blank">ABOUT</a></li>
+            <li><a href="#">PERSONAL</a></li>
+            <li><a href="#">NRI</a></li>
+            <li><a href="#">BUSINESS</a></li>
+            <li><a href="#">AGRICULTURE & RURAL</a></li>
+            <li><a href="#">INTERNATIONAL BANKING</a></li>
+            <li><a href="#">SBI WEALTH</a></li>
+            <li><a href="pcalc.html" target="_blank">LOAN CALCULATOR</a></li>
+            <img src="C:\Users\SSS\Desktop\assignment\uidass1\yono.png">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+        </ul>
+        
+         
+    </nav>
+    <nav >  
+        <p class="a">If slowness is observed during login page loading,please refresh the page for better experience.
+        SBI never asks for confidential information such as PIN and OTP from customers .Any such call can be made only by a fraudster.Please do not share personal info.</p>
+    </nav>
+     
+    <script src="phome.js"></script>
+    <main>
+        
+
+        <section class="banking-options">
+            <div class="personal-banking">
+                <h3>Personal Banking</h3>
+                
+                <p>Manage your personal finances, check your account balance, transfer funds, and more. Sign in or register as a new user.</p>
+                <img src="C:\Users\SSS\Desktop\assignment\uidass1\personal.png" style="height:50px;"><br>
+                <a href="security.html"target="_blank"><button id="personalSignIn" > Sign In </button></a>
+                  
+
+                 
+                <a href="register.html" target="_blank"><button id="personalRegister"> Register</button></a>
+            </div>
+            <div class="corporate-banking">
+                <h3>Corporate Banking</h3>
+                <p>Empower your business with our corporate banking solutions. Access advanced financial tools and services. Sign in or register as a new corporate user.</p>
+                <img src="C:\Users\SSS\Desktop\assignment\uidass1\corporate.png"style="height:50px;"><br>
+                <a href="security.html" target="_blank"><button id="corporateSignIn">Sign In</button></a>
+                 
+                <a href="register.html" target="_blank"><button id="corporateRegister">Register</button></a>
+            </div>
+        </section>
+        <div class="disclaimer">
+            <p>Use of this online banking service is subject to our terms and conditions, which include ensuring the confidentiality of your account credentials, understanding your responsibilities, and acknowledging potential security risks.</p>
+        </div>
+        <img src="C:\Users\SSS\Desktop\assignment\uidass1\sbicheque.jpg" style="width:100%;">
+        <section class="contact-details">
+            <div> 
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, please feel free to contact our support team.</p>
+            <ul>
+                <li>Email: support@example.com</li>
+                <li>Phone: +1-123-456-7890</li>
+                <li>Address: 123 Main Street, City, Country</li>
+            </ul>
+        </div>
+        </section>
+    </main>
+    <script >// home.js
+
+        document.getElementById('personalSignIn').addEventListener('click', function() {
+            // Add logic to handle personal banking sign-in
+            alert("Redirect to personal banking sign-in page");
+        });
+        
+        document.getElementById('personalRegister').addEventListener('click', function() {
+            // Add logic to handle personal banking registration
+            alert("Redirect to personal banking registration page");
+        });
+        
+        document.getElementById('corporateSignIn').addEventListener('click', function() {
+            // Add logic to handle corporate banking sign-in
+            alert("Redirect to corporate banking sign-in page");
+        });
+        
+        document.getElementById('corporateRegister').addEventListener('click', function() {
+            // Add logic to handle corporate banking registration
+            alert("Redirect to corporate banking registration page");
+        });
+        </script>
+</body>
+</html>

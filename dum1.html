@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Our Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-section {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: darkgrey;
+        }
+
+        .about-section:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* Apply styles on double-click */
+        .double-clicked {
+            background-color: #ff5733; /* Change the background color on double-click */
+            color: #000; /* Change the text color on double-click */
+        }
+
+        /* Apply styles on single-click */
+        .single-clicked {
+            background-color: #33ff57; /* Change the background color on single-click */
+            color: #000; /* Change the text color on single-click */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Online Banking</h1>
+    </header>
+    <div class="about-section" onclick="changeColor(this)" ondblclick="changeColor(this)">
+        <h2>About Our Bank</h2>
+        <p>Welcome to Online Banking, your trusted partner for secure and convenient online financial services. Our commitment is to make banking easier, faster, and more accessible for everyone. With our state-of-the-art technology and a team of dedicated experts, we aim to provide you with a seamless and secure banking experience.</p>
+    </div>
+
+    <div class="about-section" onclick="changeColor(this)" ondblclick="changeColor(this)">
+        <h2>Our History</h2>
+        <p>Founded in 1990, our bank has a rich history of serving our community. We have grown and adapted to meet the changing needs of our customers, and we are proud of our legacy of trust and reliability.</p>
+    </div>
+
+    <div class="about-section" onclick="changeColor(this)" ondblclick="changeColor(this)">
+        <h2>Our Team</h2>
+        <p>Our dedicated team of financial experts and customer service professionals is here to assist you with all your banking needs. We believe in building strong relationships with our customers and are always ready to provide guidance and support.</p>
+    </div>
+
+    <div class="about-section" onclick="changeColor(this)" ondblclick="changeColor(this)">
+        <h2>Community Involvement</h2>
+        <p>We are deeply committed to our local communities and actively support various social initiatives and charitable organizations. Our aim is to contribute positively to the areas we serve and make a meaningful impact.</p>
+    </div>
+
+    <script>
+        function changeColor(element) {
+            if (element.classList.contains('double-clicked')) {
+                element.classList.remove('double-clicked');
+                element.classList.add('single-clicked');
+            } else {
+                element.classList.remove('single-clicked');
+                element.classList.add('double-clicked');
+            }
+        }
+    </script>
+</body>
+</html>

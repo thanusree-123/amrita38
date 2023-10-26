@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .captcha {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .captcha-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .verify-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .verify-button:hover {
+            background-color: #0056b3;
+        }
+
+        .generate-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .generate-button:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+    <script type="text/javascript">
+        function generateCaptcha() {
+            var captcha = Math.random().toString(36).substring(2, 8);
+            document.getElementById("captcha").innerHTML = captcha;
+        }
+
+        function validateCaptcha() {
+            var userCaptcha = document.getElementById("userCaptcha").value;
+            var generatedCaptcha = document.getElementById("captcha").innerHTML;
+
+            if (userCaptcha === generatedCaptcha) {
+                window.location.href = "login.html";
+            } else {
+                alert("Captcha validation failed. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Security Application</h1>
+        <p>Complete the CAPTCHA to verify your identity:</p>
+        <div class="captcha" id="captcha"></div>
+        <input type="text" class="captcha-input" id="userCaptcha" placeholder="Enter the CAPTCHA">
+        <button class="verify-button" onclick="validateCaptcha()">Verify</button>
+        <button class="generate-button" onclick="generateCaptcha()">Generate CAPTCHA</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
+    <title>Register</title>
+    <style>/* styles.css */
+
+        /* Global styles for the form container */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Form-specific styles */
+        .form-container h2 {
+            text-align: center;
+        }
+        
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-container label {
+            margin: 10px 0;
+        }
+        
+        .form-container input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .form-container button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .form-container button:hover {
+            background-color: #277db0;
+        }
+        
+        .error-message {
+            color: red;
+        }
+        </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registerForm" action="register_process.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div id="errorContainer" class="error-message"></div>
+    </div>
+    <script>// register.js
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+        
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(event) {
+                    const username = registerForm.elements.username.value;
+                    const email = registerForm.elements.email.value;
+                    const password = registerForm.elements.password.value;
+                    const confirmPassword = registerForm.elements.confirmPassword.value;
+                    alert(`registered as ${username}`);
+                    const errorContainer = document.getElementById('errorContainer');
+                    let errorMessage = '';
+        
+                    if (!username) {
+                        errorMessage = 'Please enter a username.';
+                    } else if (!email) {
+                        errorMessage = 'Please enter an email address.';
+                    } else if (!isValidEmail(email)) {
+                        errorMessage = 'Please enter a valid email address.';
+                    } else if (!password) {
+                        errorMessage = 'Please enter a password.';
+                    } else if (password !== confirmPassword) {
+                        errorMessage = 'Passwords do not match.';
+                    }
+        
+                    if (errorMessage) {
+                        event.preventDefault(); // Prevent form submission
+                        errorContainer.innerHTML = errorMessage;
+                    }
+                });
+            }
+        
+            function isValidEmail(email) {
+                // A simple email validation function (you can use more robust methods)
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+                
+            }
+        });
+        </script> <!-- Link your JavaScript file here -->
+</body>
+</html>
